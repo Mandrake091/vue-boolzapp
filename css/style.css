@@ -26,7 +26,7 @@ header{
     margin-top: -80px;
     width: 80vw;
     height: 90vh;
-    background-color: rgb(166, 166, 166);
+ 
 }
 .userAvatar img{
     margin: 12px 0;
@@ -45,7 +45,23 @@ span{
     height: 40px;
 }
 
+.background{
+    
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+}
+.footer{
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.fa-face-smile,.fa-play{
+    color: white;
+    padding: 0 20px;
 
+}
 
 
