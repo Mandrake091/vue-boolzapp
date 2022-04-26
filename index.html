@@ -31,8 +31,8 @@
       <div class="container">
         <div class="row">
           
-          <div class="col-4 border-end border-secondary bg-primary d-flex align-items-center justify-content-between">
-            <div class="userAvatar rounded-circle ">
+          <div class="col-4 border-end border-secondary bg-primary d-flex align-items-center justify-content-between ">
+            <div class="userAvatar rounded-circle">
               <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
               <span>Sofia</span>
             </div> 
@@ -51,7 +51,7 @@
               </div> 
               <div class="flex-fill mx-1">
                 <span>Michele</span>
-                <p class="lastAccess m-0">Ultimo accesso</p>
+                <p class="lastMessage m-0">Ultimo accesso</p>
               </div>
            
               <div class="justify-content-end">
@@ -70,7 +70,7 @@
                 <i class=" fa-solid fa-bell-slash"></i>
                </div> 
 
-              <p class="lastAccess m-0">Ricevi notifiche di nuovi messaggi <br>
+              <p class="lastMessage m-0">Ricevi notifiche di nuovi messaggi <br>
                  <span class="text-decoration-underline text-secondary">Attiva notifiche desktop</span>
               </p>
              
@@ -81,45 +81,47 @@
                 <input type="text" class="form-control form-control-sm" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
               </div>
 
-              <div>
-              <div class="bg-secondary d-flex align-items-center justify-content-between">
-                <div class="userAvatar rounded-circle ">
-                  <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
-                  
+              
+              <div v-for="(contact, index) in contacts" class="bg-secondary d-flex align-items-center justify-content-between p-2 contact">
+                <div class="userAvatar rounded-circle">
+                  <img class="rounded-circle m-0" :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
                 </div> 
+                <div class="last-message">
+                  <p class="lastAccess m-0">{{contact.messages[0].date}}</p>
+                </div>
               <div class="flex-fill mx-1">
-                <span>Michele</span>
-                <p class="lastAccess m-0">Ultimo accesso</p>
+                <span>{{contact.name}}</span>
+                <p class="lastMessage m-0">{{contact.messages[0].date}}</p>
               </div>
             </div> 
-             <div class="bg-secondary d-flex align-items-center justify-content-between">
-                <div class="userAvatar rounded-circle ">
-                  <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
-                  
-                </div> 
-              <div class="flex-fill mx-1">
-                <span>Michele</span>
-                <p class="lastAccess m-0">Ultimo accesso</p>
-              </div>
-            </div> 
-
-            </div> 
+          
          
           </div>
 
-          <div class="col-8 background d-flex align-items-end p-0">
+          <div class="col-8 background p-0">
             
-            
-             
               <div class="input-group px-2 py-1 footer">
                 <i class="fa-regular fa-face-smile"></i>
 
                 <input type="text" class="form-control form-control-sm mx-2" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                 <i class="fa-solid fa-play"></i>
-
-              
+              </div>
+              <div class="row">
+              <div v-for="(message, index) in contacts" class="sent">
+                  {{message.messages[0].message}}
+                </div>
 
               </div>
+
+            
+
+            </div>
+           
+
+              
+             
+
+              
 
               
            
