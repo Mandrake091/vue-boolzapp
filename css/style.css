@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.bg-azure{
+    background-color: #8EDAFC;
+}
+.text-azure{
+    color: #8EDAFC;
+}
+
+
+header{
+    height: 100px;
+    background-color: rgb(0, 241, 0);
+}
+#app {
+    background-color: grey;
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    margin-top: -80px;
+    width: 80vw;
+    height: 90vh;
+    background-color: rgb(166, 166, 166);
+}
+.userAvatar img{
+    margin: 12px 0;
+    width: 50px;
+    height: 50px;
+}
+span{
+    display: inline;
+}
+.lastAccess{
+    font-size: 10px;
+}
+.icon{
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
