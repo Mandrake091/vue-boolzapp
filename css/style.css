@@ -12,13 +12,15 @@
     color: #8EDAFC;
 }
 
-
+.row:first-child{
+    background-color: #EAEAEA;
+}
 header{
     height: 100px;
-    background-color: rgb(0, 241, 0);
+    background-color: #3B9688;
 }
 #app {
-    background-color: grey;
+    background-color: #D7DBD6;
     width: 100vw;
     height: 100vh;
 }
@@ -34,7 +36,12 @@ header{
     height: 50px;
 }
 .contact{
+    background-color: #FFFFFF;
     position: relative;
+    cursor: pointer;
+}
+.contact:hover{
+    background-color: #E9EBEB;
 }
 .lastAccess{
     font-size: 10px;
@@ -59,7 +66,7 @@ header{
     background-repeat: repeat;
 }
 .footer{
-    background-color: rgb(77, 77, 77);
+    background-color: #EAEAEA;
     position: absolute;
     bottom: 0;
     align-items: center; 
@@ -93,9 +100,8 @@ header{
 }
 
 .fa-face-smile,.fa-play{
-    color: white;
+    color: #6B7477;
     padding: 0 20px;
-
 }
 
 

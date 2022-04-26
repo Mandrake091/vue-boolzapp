@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row">
           
-          <div class="col-4 border-end border-secondary bg-primary d-flex align-items-center justify-content-between ">
+          <div class="col-4 border-end border-secondary d-flex align-items-center justify-content-between ">
             <div class="userAvatar rounded-circle">
               <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
               <span>Sofia</span>
@@ -44,7 +44,7 @@
             
           </div>
          
-            <div class="col-8 bg-primary d-flex align-items-center justify-content-between">
+            <div class="col-8 d-flex align-items-center justify-content-between">
               <div class="userAvatar rounded-circle ">
                 <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
                 
@@ -78,11 +78,15 @@
 
               <div class="input-group px-2 py-2">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control form-control-sm" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                <input  
+                v-model = "filtro"
+                @keyup = "filtra()" 
+                type="text" 
+                class="form-control form-control-sm" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
               </div>
 
               
-              <div v-for="(contact, index) in contacts" class="bg-secondary d-flex align-items-center justify-content-between p-2 contact">
+              <div @click="showConversation" v-for="(contact, index) in filteredContacts" class="d-flex align-items-center justify-content-between p-2 contact">
                 <div class="userAvatar rounded-circle">
                   <img class="rounded-circle m-0" :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
                 </div> 

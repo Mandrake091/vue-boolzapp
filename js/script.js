@@ -165,14 +165,21 @@ const app = new Vue({
       }
   ],
     filtro:'',
-    prodottiFiltrati:[]
+    filteredContacts:[]
     },
 
   methods: {
     filtra() {
-      const prodottiFiltrati = this.prodotti.filter((item)=>{
+      this.filteredContacts= this.contacts.filter((item)=>{
         return item.name.includes(this.filtro);
       })
     },
+    showConversation(){
+      console.log('ciao')
+
+    }
   },
+  mounted(){
+    this.filtra()
+  }
 });
