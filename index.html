@@ -68,11 +68,11 @@
                   :alt="'Avatar' + contact.name">
               </div>
               <div class="last-message">
-                <p class="lastAccess m-0">{{contact.messages[0].date}}</p>
+                <p class="lastAccess m-0">{{contact.messages.at(-1).date}}</p>
               </div>
               <div class="flex-fill mx-1">
                 <span>{{contact.name}}</span>
-                <p class="lastMessage m-0">{{contact.messages[0].message}}</p>
+                <p class="lastMessage m-0">{{contact.messages.at(-1).message}}</p>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
             <div>
                 <p class="m-0">{{contacts[currentIndex].name}}</p>
 
-            <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages[0].date}}
+            <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages.at(-1).date}}
 
             </span>
             </div>
@@ -102,6 +102,20 @@
           <div class="messages-container">
             <div v-for="(item, index) in contacts[currentIndex].messages"
               :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
+
+              
+               <div class="dropdown">
+                <button class="btn p-2" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="fa-solid fa-chevron-down"></i> 
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button @click="eraseMessage" class="dropdown-item" type="button">Elimina messaggio</button></li>
+                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                </ul>
+              </div>
+
+            
+
               <p>{{item.message}}</p>
               <p class="lastDate m-0 text-end">{{item.date}}</p>
             </div>

@@ -179,23 +179,27 @@ const app = new Vue({
             this.currentIndex = index;
         },
         sendMessage() {
-            if (this.message === '') return;
+            if (this.message == '') return;
             const newMessage = {
-                date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                date: dayjs().format('hh:mm'),
                 message: this.message,
                 status: 'sent'
             };
+           let randomReplies = ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?','Ti và di mangiare la pizza?','Hello world!', 'Io ti conosco: Sei tu!']
             const replyMessage = {
-                date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
-                message: 'Risposta automatica',
-                status: 'received'
+                date: dayjs().format('hh:mm'),
+                message: randomReplies[Math.floor(Math.random() * randomReplies.length)],
+                    status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newMessage);
             this.message = '';
             setTimeout(() => {
                 this.contacts[this.currentIndex].messages.push(replyMessage);
-            }, 2000);
-        }
+            }, 3000);
+        },
+        eraseMessage() {
+            this.contacts[this.currentIndex].messages.pop(this.message);
+        },
     },
     mounted() {
         this.filtra()

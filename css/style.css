@@ -89,14 +89,28 @@
 }
 
 .message-text {
+    z-index: 1000;
     position: relative;
     margin: 5px 50px;
     padding: 15px 15px 0px 15px;
-    min-width: 35%;
-    max-width: 50%;
+    min-width: 40%;
+    max-width: 70%;
     border-radius: 10px;
     font-size: 15px;
 }
+.fa-chevron-down,.btn{
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.fa-chevron-down:hover,.btn:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
 
 .message-text.sent {
     filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
