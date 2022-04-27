@@ -19,7 +19,7 @@
 
 
 #app {
-    background-image: linear-gradient(to bottom, green 0px, green 15vh, white 15vh, white 100%);
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 100px, white 100px, white 100%);
     width: 100vw;
     height: 100vh;
 }
@@ -114,7 +114,7 @@
 
 .message-text.sent {
     filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
-    background-color: lightgreen;
+    background-color: #d5f9ba;
 
     color: black;
     float: right;
