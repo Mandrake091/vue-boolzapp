@@ -16,12 +16,18 @@
   <link rel="stylesheet" href="./css/style.css" />
   <title>Vue Boolzapp</title>
 </head>
+
 <body>
 
+  <!-- VueJs -->
   <div id="app">
+    <!-- Container principale -->
     <div class="container h-100">
+      <!-- Row principale -->
       <div class="row align-items-lg-stretch h-100 g-0">
+        <!-- Colonna di sinistra -->
         <div class="col-4 h-100 border-end border-secondary">
+          <!-- Riquadro utente -->
           <div class="header">
             <div class="userAvatar rounded-circle">
               <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
@@ -31,6 +37,7 @@
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
+          <!-- Riquadro notifiche -->
           <div class="notifications">
             <div class="bg-azure d-flex align-items-center">
               <div class="rounded-circle icon bg-white text-center text-azure m-2">
@@ -41,6 +48,7 @@
               </p>
             </div>
           </div>
+          <!-- Search bar -->
           <div class="search-bar">
             <div class="input-group px-2 py-2">
               <span class="input-group-text" id="basic-addon1">
@@ -50,6 +58,7 @@
                 placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
+          <!-- Riquadro contacts -->
           <div class="contacts">
             <div @click="changeActive(index)" v-for="(contact, index) in filteredContacts" :key="contact.id"
               class="d-flex align-items-center justify-content-between p-2 contact"
@@ -58,7 +67,6 @@
                 <img class="rounded-circle m-0" :src="'./img/avatar' + contact.avatar + '.jpg'"
                   :alt="'Avatar' + contact.name">
               </div>
-
               <div class="last-message">
                 <p class="lastAccess m-0">{{contact.messages[0].date}}</p>
               </div>
@@ -68,35 +76,42 @@
               </div>
             </div>
           </div>
-        </div>
+
+        </div><!--  /colonna di sinistra -->
 
 
+        <!-- Colonna di destra -->
         <div class="col-8 background h-100">
-          <div class="header userAvatar">
-           
-              <img class="rounded-circle" src="./img/avatar_1.jpg" alt="">
-              <span>Michele</span>
-              <span class="lastMessage m-0">Ultimo accesso: </span>
+          <div class="header userAvatar d-flex align-items-center">
+            <img class="rounded-circle" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'" alt="">
+            <div>
+                <p class="m-0">{{contacts[currentIndex].name}}</p>
+
+            <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages[0].date}}
+
+            </span>
+            </div>
           
+            <div class="flex-fill text-end px-3">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-paperclip"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
-               
             </div>
-         
+          </div>
+
           <div class="messages-container">
-              <div v-for="(item, index) in contacts[currentIndex].messages"
-                :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
-                <p>{{item.message}}</p>
-                <span class="lastDate">{{item.date}}</span>
-              </div>
-           
+            <div v-for="(item, index) in contacts[currentIndex].messages"
+              :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
+              <p>{{item.message}}</p>
+              <p class="lastDate m-0 text-end">{{item.date}}</p>
+            </div>
+
           </div>
           <div class="footer">
             <div class="input-group px-2 py-1 align-items-center">
               <i class="fa-regular fa-face-smile"></i>
-              <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                aria-label="Username" aria-describedby="basic-addon1" v-model="message" @keyup.enter="sendMessage()">
+              <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
+                aria-describedby="basic-addon1" v-model="message" @keyup.enter="sendMessage()">
               <i class="fa-solid fa-play"></i>
             </div>
           </div>
@@ -104,10 +119,10 @@
 
       </div>
 
- 
+
     </div>
   </div>
-</div>
+  </div>
 
 
   <script src="./js/script.js"></script>
