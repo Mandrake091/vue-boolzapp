@@ -5,103 +5,148 @@
 
 }
 
-.bg-azure{
+.bg-azure {
     background-color: #8EDAFC;
 }
-.text-azure{
+
+.text-azure {
     color: #8EDAFC;
 }
 
-.row:first-child{
+.row:first-child {
     background-color: #EAEAEA;
 }
-header{
-    height: 100px;
-    background-color: #3B9688;
-}
+
+
 #app {
-    background-color: #D7DBD6;
+    background-image: linear-gradient(to bottom, green 0px, green 15vh, white 15vh, white 100%);
     width: 100vw;
     height: 100vh;
 }
-.container{
-    margin-top: -80px;
-    width: 90vw;
-    height: 90vh;
- 
+
+.container {
+    padding-top: 50px;
 }
-.userAvatar img{
+.userAvatar img {
     margin: 12px 0;
     width: 50px;
     height: 50px;
 }
-.contact{
+
+.contact {
     background-color: #FFFFFF;
     position: relative;
     cursor: pointer;
 }
-.contact:hover{
+
+.contacts {
+    height: calc(100% - 180px);
+    overflow: auto;
+}
+
+.contact:hover {
     background-color: #E9EBEB;
 }
-.lastAccess{
+
+.notifications {
+    height: 60px;
+}
+
+.header {
+    background-color: #EAEAEA;
+    height: 70px;
+}
+
+.messages-container {
+    margin: 0 auto;
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100% - 120px);
+}
+
+.footer {
+    background-color: #EAEAEA;
+    height: 50px;
+}
+
+.search-bar {
+    height: 50px;
+}
+
+.lastAccess {
     font-size: 10px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
 }
-.lastMessage{
+
+.lastMessage {
     font-size: 12px;
 }
 
-.icon{
+.lastDate {
+    font-size: 10px;
+}
+
+.message-text {
+    position: relative;
+    margin: 5px 50px;
+    padding: 15px 15px 20px 15px;
+    min-width: 40%;
+    max-width: 55%;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.message-text.sent {
+    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
+    background-color: lightgreen;
+
+    color: black;
+    float: right;
+
+}
+
+.message-text.received {
+    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
+    background-color: white;
+    color: black;
+    float: left;
+}
+
+
+
+.icon {
     line-height: 40px;
     width: 40px;
     height: 40px;
 }
 
-.background{
-    
+.active {
+    background-color: #a1a1a1;
+}
+
+.background {
     background-image: url(../img/mine.jpg);
     background-size: contain;
     background-repeat: repeat;
 }
-.footer{
-    background-color: #EAEAEA;
-    position: absolute;
-    bottom: 0;
-    align-items: center; 
-}
-.col-8{
-    position: relative;
-}
-.sent{
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 25%;
-    margin: 40px;
-    padding: 10px;
-    border-radius: 5px;
-    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
-    background-color: white;
-    color: black;
-}
-.received{
-    width: 25%;
-    border-radius: 5px;
-    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
-    position: absolute;
-    margin: 40px;
-    padding: 10px;
-    top: 0;
-    right: 0;
-    background-color: lightgreen;
-    color: black;
-}
 
-.fa-face-smile,.fa-play{
+.fa-face-smile,
+.fa-play {
     color: #6B7477;
     padding: 0 20px;
 }
 
+.fa-paperclip,
+.fa-ellipsis-vertical,
+.fa-circle-notch,
+.fa-message,
+.fa-ellipsis-vertical {
+    padding-left: 10px;
+    color: #6B7477;
+}
 
+#basic-addon1 {
+    background-color: white;
+}
