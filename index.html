@@ -29,12 +29,18 @@
         <div class="col-4 h-100 border-end border-secondary">
           <!-- Riquadro utente -->
           <div class="header">
-            <div class="userAvatar rounded-circle">
-              <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
-              <span>Sofia</span>
-              <i class="fa-solid fa-circle-notch"></i>
-              <i class="fa-solid fa-message"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
+            <div class="userAvatar rounded-circle d-flex justify-content-between align-items-center">
+              <div class="px-2">
+                <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
+                <span>Sofia</span>
+              </div>
+
+              <div class="px-2">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+
             </div>
           </div>
           <!-- Riquadro notifiche -->
@@ -85,13 +91,13 @@
           <div class="header userAvatar d-flex align-items-center">
             <img class="rounded-circle" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'" alt="">
             <div>
-                <p class="m-0">{{contacts[currentIndex].name}}</p>
+              <p class="m-0">{{contacts[currentIndex].name}}</p>
 
-            <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages.at(-1).date}}
+              <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages.at(-1).date}}
 
-            </span>
+              </span>
             </div>
-          
+
             <div class="flex-fill text-end px-3">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-paperclip"></i>
@@ -103,10 +109,11 @@
             <div v-for="(item, index) in contacts[currentIndex].messages"
               :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
 
-              
-               <div class="dropdown">
-                <button class="btn p-2" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                 <i class="fa-solid fa-chevron-down"></i> 
+
+              <div class="dropdown">
+                <button class="btn p-2" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                   <li><button @click="eraseMessage" class="dropdown-item" type="button">Elimina messaggio</button></li>
@@ -114,7 +121,7 @@
                 </ul>
               </div>
 
-            
+
 
               <p>{{item.message}}</p>
               <p class="lastDate m-0 text-end">{{item.date}}</p>
