@@ -164,6 +164,7 @@ const app = new Vue({
             }
         ],
         currentIndex: 0,
+        currentId: 1,
         filtro: '',
         message: '',
         filteredContacts: []
@@ -175,7 +176,11 @@ const app = new Vue({
                 return item.name.toLowerCase().includes(this.filtro.toLowerCase());
             })
         },
-        changeActive(index) {
+        changeActive(id) {
+            this.currentId = id;
+            const index = this.contacts.findIndex((el) => {
+                return el.id === id
+            })
             this.currentIndex = index;
         },
         sendMessage() {
@@ -185,11 +190,11 @@ const app = new Vue({
                 message: this.message,
                 status: 'sent'
             };
-           let randomReplies = ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?','Ti và di mangiare la pizza?','Hello world!', 'Io ti conosco: Sei tu!']
+            let randomReplies = ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?', 'Ti và di mangiare la pizza?', 'Hello world!', 'Io ti conosco: Sei tu!', 'Perchè scrivi cose a caso?']
             const replyMessage = {
                 date: dayjs().format('HH:mm'),
                 message: randomReplies[Math.floor(Math.random() * randomReplies.length)],
-                    status: 'received'
+                status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newMessage);
             this.message = '';
@@ -197,18 +202,15 @@ const app = new Vue({
                 this.contacts[this.currentIndex].messages.push(replyMessage);
             }, 3000);
         },
-        eraseMessage() {
-            this.contacts[this.currentIndex].messages.pop(this.message);
+        eraseMessage(index, currentIndex) {
+            if (this.contacts[this.currentIndex].messages.length > 0) {
+                this.contacts[this.currentIndex].messages.splice(index, 1);
+            } else return;
         },
+    },
+    computed: {
     },
     mounted() {
         this.filtra()
     },
-    // computed: {
-    //     filteredContacts() {
-    //         return this.contacts.filter((contact) => {
-    //             if (contact.name.toLowerCase().includes(this.filtro.toLowerCase())) {}
-    //         })
-    //     }
-    // }
 });

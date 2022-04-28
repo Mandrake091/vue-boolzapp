@@ -102,7 +102,7 @@
     z-index: 1;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -5px;
     opacity: 0;
 }
 .fa-chevron-down:hover,.btn:hover{
@@ -110,15 +110,11 @@
     opacity: 1;
 }
 
-
-
 .message-text.sent {
     filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
     background-color: #d5f9ba;
-
     color: black;
     float: right;
-
 }
 
 .message-text.received {
