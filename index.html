@@ -74,23 +74,27 @@
                   :alt="'Avatar' + contact.name">
               </div>
               <div class="last-message">
-                <p class="lastAccess m-0 text-secondary">{{contact[currentId].messages.at(-1).date}}</p>
+                <p class="lastAccess m-0 text-secondary">
+                  {{noDate(contact)}}</p>
               </div>
               <div class="flex-fill mx-1">
                 <span>{{contact.name}}</span>
-                <p class="lastMessage m-0 text-secondary">{{contact.messages.at(-1).message}}</p>
+                <p class="lastMessage m-0 text-secondary">
+                  {{noMessage(contact)}}</p>
               </div>
             </div>
           </div>
 
-        </div> <!--/colonna di sinistra -->
+        </div>
+        <!--/colonna di sinistra -->
         <!-- Colonna di destra -->
         <div class="col-8 background h-100">
           <div class="header userAvatar d-flex align-items-center">
             <img class="rounded-circle" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'" alt="">
             <div>
               <p class="m-0">{{contacts[currentIndex].name}}</p>
-              <span class="lastMessage">Ultimo accesso: {{contacts[currentIndex].messages.at(-1).date}}
+              <span class="lastMessage">Ultimo accesso:
+                {{contacts[currentIndex].messages.length > 0 ? contacts[currentIndex].messages.at(-1).date : ''}}
               </span>
             </div>
 
@@ -107,17 +111,15 @@
 
 
               <div class="dropdown">
-                <button class="btn p-2" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+                <button class="btn p-2 border-none" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li><button @click="eraseMessage(index, currentIndex)" class="dropdown-item" type="button">Elimina messaggio</button></li>
-                  <li><button class="dropdown-item" type="button">Another action</button></li>
+                  <li><button @click="eraseMessage(index, currentIndex)" class="dropdown-item" type="button">Elimina
+                      messaggio</button></li>
                 </ul>
               </div>
-
-
 
               <p>{{item.message}}</p>
               <p class="lastDate m-0 text-end text-secondary">{{item.date}}</p>

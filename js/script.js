@@ -167,7 +167,8 @@ const app = new Vue({
         currentId: 1,
         filtro: '',
         message: '',
-        filteredContacts: []
+        filteredContacts: [],
+        randomReplies : ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?', 'Ti và di mangiare la pizza?', 'Hello world!', 'Io ti conosco: Sei tu!', 'Perchè scrivi cose a caso?']
     },
 
     methods: {
@@ -190,10 +191,10 @@ const app = new Vue({
                 message: this.message,
                 status: 'sent'
             };
-            let randomReplies = ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?', 'Ti và di mangiare la pizza?', 'Hello world!', 'Io ti conosco: Sei tu!', 'Perchè scrivi cose a caso?']
+          
             const replyMessage = {
                 date: dayjs().format('HH:mm'),
-                message: randomReplies[Math.floor(Math.random() * randomReplies.length)],
+                message: this.randomReplies[Math.floor(Math.random() * this.randomReplies.length)],
                 status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newMessage);
@@ -203,13 +204,20 @@ const app = new Vue({
             }, 3000);
         },
         eraseMessage(index, currentIndex) {
-            if (this.contacts[this.currentIndex].messages.length > 0) {
-                this.contacts[this.currentIndex].messages.splice(index, 1);
+            if (this.contacts[currentIndex].messages.length > 0) {
+                this.contacts[currentIndex].messages.splice(index, 1);
             } else return;
         },
+        noDate(contact) {
+            const noDate = contact.messages.length > 0 ? contact.messages.at(-1).date : ''
+            return noDate
+        },
+        noMessage(contact){
+            const noMessage = contact.messages.length > 0 ? contact.messages.at(-1).message : 'NESSUN MESSAGGIO'
+            return noMessage
+        }
     },
-    computed: {
-    },
+    computed: {},
     mounted() {
         this.filtra()
     },

@@ -87,9 +87,11 @@
 .lastDate {
     font-size: 10px;
 }
+.dropdown-menu{
+    padding:0
+}
 
 .message-text {
-    z-index: 1000;
     position: relative;
     margin: 5px 50px;
     padding: 15px 15px 0px 15px;
@@ -124,8 +126,6 @@
     float: left;
 }
 
-
-
 .icon {
     line-height: 40px;
     width: 40px;
@@ -133,7 +133,7 @@
 }
 
 .active {
-    background-color: #a1a1a1;
+    background-color: #c3c3c3;
 }
 
 .background {
@@ -153,10 +153,8 @@
 .fa-circle-notch,
 .fa-message,
 .fa-ellipsis-vertical {
+    cursor: pointer;
     padding-left: 10px;
     color: #6B7477;
 }
 
-#basic-addon1 {
-    background-color: white;
-}
