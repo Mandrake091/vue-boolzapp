@@ -187,13 +187,12 @@ const app = new Vue({
         sendMessage() {
             if (this.message == '') return;
             const newMessage = {
-                date: dayjs().format('HH:mm'),
+                date:'Sta scrivendo.. ',
                 message: this.message,
                 status: 'sent'
             };
-          
             const replyMessage = {
-                date: dayjs().format('HH:mm'),
+                date:'Oggi '+  dayjs().format('HH:mm'),
                 message: this.randomReplies[Math.floor(Math.random() * this.randomReplies.length)],
                 status: 'received'
             }
