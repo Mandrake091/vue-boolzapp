@@ -168,7 +168,7 @@ const app = new Vue({
         filtro: '',
         message: '',
         filteredContacts: [],
-        randomReplies : ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?', 'Ti và di mangiare la pizza?', 'Hello world!', 'Io ti conosco: Sei tu!', 'Perchè scrivi cose a caso?']
+        randomReplies: ['Ciao!', 'Come stai?', 'Facciamo un giro in macchina!', 'Come butta?', 'Ti và di mangiare la pizza?', 'Hello world!', 'Io ti conosco: Sei tu!', 'Perchè scrivi cose a caso?']
     },
 
     methods: {
@@ -187,12 +187,12 @@ const app = new Vue({
         sendMessage() {
             if (this.message == '') return;
             const newMessage = {
-                date:'Sta scrivendo.. ',
+                date: 'Oggi ' + dayjs().format('HH:mm'),
                 message: this.message,
                 status: 'sent'
             };
             const replyMessage = {
-                date:'Oggi '+  dayjs().format('HH:mm'),
+                date: 'Oggi ' + dayjs().format('HH:mm'),
                 message: this.randomReplies[Math.floor(Math.random() * this.randomReplies.length)],
                 status: 'received'
             }
@@ -211,7 +211,7 @@ const app = new Vue({
             const noDate = contact.messages.length > 0 ? contact.messages.at(-1).date : ''
             return noDate
         },
-        noMessage(contact){
+        noMessage(contact) {
             const noMessage = contact.messages.length > 0 ? contact.messages.at(-1).message : 'NESSUN MESSAGGIO'
             return noMessage
         }
