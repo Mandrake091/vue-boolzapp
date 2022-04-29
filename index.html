@@ -77,7 +77,7 @@
                 <p class="lastAccess m-0 text-secondary">
                   {{noDate(contact)}}</p>
               </div>
-              <div class="flex-fill mx-2">
+              <div class="flex-fill mx-2 overflow">
                 <span>{{contact.name}}</span>
                 <p class="lastMessage m-0 text-secondary">
                   {{noMessage(contact)}}</p>
@@ -105,7 +105,7 @@
             </div>
           </div>
 
-          <div class="messages-container">
+          <div class="messages-container d-flex flex-column">
             <div v-for="(item, index) in contacts[currentIndex].messages"
               :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
 

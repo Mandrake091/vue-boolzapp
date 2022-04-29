@@ -82,9 +82,18 @@
     top: 5px;
     right: 5px;
 }
-
+.overflow{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+   
+}
 .lastMessage {
+    width: 65%;
     font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .lastDate {
@@ -95,11 +104,12 @@
 }
 
 .message-text {
+    word-wrap: break-word;
     position: relative;
-    margin: 5px 50px;
+    margin: 20px 20px;
     padding: 15px 15px 0px 15px;
-    min-width: 40%;
-    max-width: 70%;
+    min-width: 20%;
+    max-width: 50%;
     border-radius: 10px;
     font-size: 15px;
    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133)); 
@@ -117,15 +127,16 @@
 }
 
 .message-text.sent {
+    align-self: end;
     background-color: #d5f9ba;
     color: black;
-    float: right;
+  
 }
 
 .message-text.received {
+    align-self: start;
     background-color: white;
     color: black;
-    float: left;
 }
 
 .icon {
@@ -136,6 +147,7 @@
 
 .active {
     background-color: #c3c3c3;
+    text-overflow: ellipsis;
 }
 
 .background {
