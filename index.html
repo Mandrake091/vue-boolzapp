@@ -26,7 +26,7 @@
       <!-- Row principale -->
       <div class="row align-items-lg-stretch h-100 g-0">
         <!-- Colonna di sinistra -->
-        <div class="col-4 h-100 border-end border-secondary">
+        <div class="col-12 col-lg-4 h-100 border-end border-secondary" >
           <!-- Riquadro utente -->
           <div class="header">
             <div class="userAvatar rounded-circle d-flex justify-content-between align-items-center">
@@ -77,7 +77,7 @@
                 <p class="lastAccess m-0 text-secondary">
                   {{noDate(contact)}}</p>
               </div>
-              <div class="flex-fill mx-1">
+              <div class="flex-fill mx-2">
                 <span>{{contact.name}}</span>
                 <p class="lastMessage m-0 text-secondary">
                   {{noMessage(contact)}}</p>
@@ -131,7 +131,7 @@
               <i class="fa-regular fa-face-smile"></i>
               <input type="text" class="form-control rounded-3" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
                 aria-describedby="basic-addon1" v-model="message" @keyup.enter="sendMessage()">
-              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-microphone"></i>
             </div>
           </div>
         </div>

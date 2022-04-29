@@ -31,7 +31,7 @@
     margin: 12px 0;
     width: 50px;
     height: 50px;
-    filter: drop-shadow(0px 0px 3px  rgb(133, 133, 133));
+    filter: drop-shadow(0px 0px 2px  rgb(133, 133, 133));
 }
 
 
@@ -102,6 +102,7 @@
     max-width: 70%;
     border-radius: 10px;
     font-size: 15px;
+   filter: drop-shadow(3px 3px 3px rgb(133, 133, 133)); 
 }
 .fa-chevron-down,.btn{
     z-index: 1;
@@ -116,14 +117,12 @@
 }
 
 .message-text.sent {
-    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
     background-color: #d5f9ba;
     color: black;
     float: right;
 }
 
 .message-text.received {
-    filter: drop-shadow(3px 3px 3px rgb(133, 133, 133));
     background-color: white;
     color: black;
     float: left;
@@ -146,7 +145,7 @@
 }
 
 .fa-face-smile,
-.fa-play
+.fa-microphone
  {
     color: #6B7477;
     padding: 0 20px;
