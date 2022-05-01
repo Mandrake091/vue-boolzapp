@@ -16,14 +16,11 @@
 .row:first-child {
     background-color: #EAEAEA;
 }
-
-
 #app {
     background-image: linear-gradient(to bottom, #009688 0px, #009688 100px, white 100px, white 100%);
     width: 100vw;
     height: 100vh;
 }
-
 .container {
     padding-top: 35px;
 }
@@ -46,7 +43,8 @@
 }
 
 .contact:hover {
-    background-color: #E9EBEB;
+   box-shadow: inset 0px 0px 15px  rgba(37, 37, 37, 0.23);
+   border-radius: 5px;
 }
 
 .notifications {
@@ -129,7 +127,6 @@
     align-self: end;
     background-color: #d5f9ba;
     color: black;
-  
 }
 
 .message-text.received {
@@ -146,7 +143,6 @@
 
 .active {
     background-color: #c3c3c3;
-    text-overflow: ellipsis;
 }
 
 .background {

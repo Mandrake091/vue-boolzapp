@@ -32,8 +32,8 @@
           <div class="header">
             <div class="userAvatar rounded-circle d-flex justify-content-between align-items-center">
               <div class="">
-                <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
-                <span>Sofia</span>
+                <img class="rounded-circle" src="./img/avatar.png" alt="">
+                <span>Paolo</span>
               </div>
 
               <div class="px-2">
@@ -67,8 +67,8 @@
           </div>
           <!-- Riquadro contacts -->
           <div class="contacts">
-            <div @click="showChatMobile(); changeActive(contact.id) " v-for="(contact, index) in filteredContacts" :key="contact.id"
-              class="d-flex align-items-center justify-content-between p-2 contact"
+            <div @click="showChatMobile(); changeActive(contact.id)" v-for="(contact, index) in filteredContacts" :key="contact.id"
+              class="d-flex align-items-center justify-content-between p-2 contact rounded rounded-2"
               :class="{'active' : currentId === contact.id}">
               <div class="userAvatar rounded-circle">
                 <img class="rounded-circle m-0" :src="'./img/avatar' + contact.avatar + '.jpg'"
@@ -85,7 +85,6 @@
               </div>
             </div>
           </div>
-
         </div>
         <!--/colonna di sinistra -->
         <!-- Colonna di destra -->
@@ -109,7 +108,7 @@
             </div>
           </div>
 
-          <div class="messages-container d-flex flex-column rounded-3 p-2 background mx-2">
+          <div class="messages-container d-flex flex-column rounded-3 p-2 background mx-1">
             <div v-for="(item, index) in contacts[currentIndex].messages"
               :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
 
