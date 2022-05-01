@@ -212,7 +212,7 @@ const app = new Vue({
             return noDate
         },
         noMessage(contact) {
-            const noMessage = contact.messages.length > 0 ? contact.messages.at(-1).message : 'NESSUN MESSAGGIO'
+            const noMessage = contact.messages.length > 0 ? contact.messages.at(-1).message : 'NESSUN MESSAGGIO';
             return noMessage
         },
         showChatMobile(){

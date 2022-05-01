@@ -26,7 +26,7 @@
       <!-- Row principale -->
       <div class="row align-items-lg-stretch h-100 g-0 justify-content-center">
         <!-- Colonna di sinistra -->
-        <div class="col-12 col-md-4 d-md-block h-100 border-end border-secondary"
+        <div class="col-12 col-md-4 d-md-block h-100"
         :class="contacts[currentIndex].visible ? 'd-none' : 'd-block'">
           <!-- Riquadro utente -->
           <div class="header">
@@ -89,10 +89,10 @@
         </div>
         <!--/colonna di sinistra -->
         <!-- Colonna di destra -->
-        <div class="col-12 col-md-8 background h-100" :class="contacts[currentIndex].visible ? 'd-block' : 'd-none'">
+        <div class="col-12 col-md-8 d-md-block h-100" :class="contacts[currentIndex].visible ? 'd-block' : 'd-none'">
           <div class="header userAvatar d-flex align-items-center ">
-            <a href="#">
-            <i class="fa-solid fa-angle-left px-2 d-md-none" @click="showChatMobile()"></i>
+            <a @click="showChatMobile()" href="#">
+            <i class="fa-solid fa-angle-left px-3 d-md-none" ></i>
             </a>
             <img class="rounded-circle mx-2" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'" alt="">
             <div>
@@ -109,7 +109,7 @@
             </div>
           </div>
 
-          <div class="messages-container d-flex flex-column">
+          <div class="messages-container d-flex flex-column rounded-3 p-2 background mx-2">
             <div v-for="(item, index) in contacts[currentIndex].messages"
               :class="item.status === 'sent' ? 'sent' : 'received'" :key="index" class="message-text">
 
