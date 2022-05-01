@@ -216,8 +216,9 @@ const app = new Vue({
             return noMessage
         },
         showChatMobile(){
-            
+            this.contacts[this.currentIndex].visible = !this.contacts[this.currentIndex].visible
         },
+
     },
     computed: {},
     mounted() {

@@ -24,13 +24,14 @@
     <!-- Container principale -->
     <div class="container h-100">
       <!-- Row principale -->
-      <div class="row align-items-lg-stretch h-100 g-0">
+      <div class="row align-items-lg-stretch h-100 g-0 justify-content-center">
         <!-- Colonna di sinistra -->
-        <div class="col-12 col-lg-4 h-100 border-end border-secondary" >
+        <div class="col-12 col-md-4 d-md-block h-100 border-end border-secondary"
+        :class="contacts[currentIndex].visible ? 'd-none' : 'd-block'">
           <!-- Riquadro utente -->
           <div class="header">
             <div class="userAvatar rounded-circle d-flex justify-content-between align-items-center">
-              <div class="px-2">
+              <div class="">
                 <img class="rounded-circle" src="./img/avatar_io.jpg" alt="">
                 <span>Sofia</span>
               </div>
@@ -66,7 +67,7 @@
           </div>
           <!-- Riquadro contacts -->
           <div class="contacts">
-            <div @click="changeActive(contact.id)" v-for="(contact, index) in filteredContacts" :key="contact.id"
+            <div @click="showChatMobile(); changeActive(contact.id) " v-for="(contact, index) in filteredContacts" :key="contact.id"
               class="d-flex align-items-center justify-content-between p-2 contact"
               :class="{'active' : currentId === contact.id}">
               <div class="userAvatar rounded-circle">
@@ -88,8 +89,11 @@
         </div>
         <!--/colonna di sinistra -->
         <!-- Colonna di destra -->
-        <div class="col-8 background h-100">
-          <div class="header userAvatar d-flex align-items-center">
+        <div class="col-12 col-md-8 background h-100" :class="contacts[currentIndex].visible ? 'd-block' : 'd-none'">
+          <div class="header userAvatar d-flex align-items-center ">
+            <a href="#">
+            <i class="fa-solid fa-angle-left px-2 d-md-none" @click="showChatMobile()"></i>
+            </a>
             <img class="rounded-circle mx-2" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'" alt="">
             <div>
               <p class="m-0">{{contacts[currentIndex].name}}</p>
